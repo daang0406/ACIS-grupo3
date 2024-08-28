@@ -1,6 +1,6 @@
 # ACIS-grupo3
 
-# Resumen del Artículo: S-CycleGAN: Semantic Segmentation Enhanced CT-Ultrasound Image-to-Image Translation for Robotic Ultrasonography
+# S-CycleGAN: Semantic Segmentation Enhanced CT-Ultrasound Image-to-Image Translation for Robotic Ultrasonography
 
 ## Introducción
 
