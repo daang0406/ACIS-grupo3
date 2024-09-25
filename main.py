@@ -76,7 +76,7 @@ def main():
     dicom_processor = DicomProcessor()
 
     # Página 1: Cargar y mostrar imagen DICOM o JPG
-    if menu_seleccionado == "CYCLE-GAN":
+    if menu_seleccionado == "SCYCLE-GAN":
         st.header("Cargar Imagen (DICOM o JPG) y Predicción")
 
         uploaded_file = st.file_uploader("Elige un archivo DICOM o JPG", type=["dcm", "jpg", "jpeg"])
