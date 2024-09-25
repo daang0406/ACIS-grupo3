@@ -137,7 +137,19 @@ def main():
                  " datos sintéticos.")
         
     elif menu_seleccionado == "Manual de Usuario":
-        st.write("Hola")
+        st.title('Manual de Usuario')
+
+        # Sección: ¿Para qué sirve?
+        st.subheader('¿Para qué sirve?')
+        st.write('Esta es una aplicación de la cual se encarga de transformar imágenes de CT a US y viceversa')
+        
+        # Cargar la imagen
+        image_path = '--la ruta--'  # Ruta de tu imagen
+        st.image(image_path, width=300)
+        
+        # Sección: ¿Cuáles son los parámetros empleados?
+        st.subheader('¿Cuáles son los parámetros empleados?')
+        st.write('Los parámetros que se pueden variar son los siguientes:')
 
 if __name__ == "__main__":
     main()
