@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from streamlit_option_menu import option_menu
 import requests
 from datetime import datetime
+import io
 
 # Clase para cargar y procesar imágenes DICOM o JPG
 class DicomProcessor:
