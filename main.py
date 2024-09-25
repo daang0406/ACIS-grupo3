@@ -105,7 +105,24 @@ def main():
             if st.button("Realizar Predicción"):
                 prediccion = modelo_ia.predecir(imagen)
                 if prediccion is not None:
-                    st.write(f"Resultado de la predicción: {prediccion}")
+                    #st.write(f"Resultado de la predicción: {prediccion}")
+
+                    st.image(prediccion, caption="Resultado de la Predicción")
+
+                    # Guardar la imagen con el formato especificado
+                    prediccion_img = Image.fromarray(prediccion)
+                    buffer = io.BytesIO()
+                    nombre_archivo = f"{nombre_paciente}_{dni_paciente}_{fecha_examen}.jpg"
+                    prediccion_img.save(buffer, format="JPEG")
+                    buffer.seek(0)
+    
+                    # Botón para descargar la imagen
+                    st.download_button(
+                        label="Descargar Imagen",
+                        data=buffer,
+                        file_name=nombre_archivo,
+                        mime="image/jpeg"
+                    )
 
     # Página 2: Personalizar (vacía)
     elif menu_seleccionado == "ACPIS":
