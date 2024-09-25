@@ -2,4 +2,4 @@ tempfile
 pillow
 av
 mediapipe
-streamlit
+
