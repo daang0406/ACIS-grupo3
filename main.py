@@ -70,7 +70,7 @@ def main():
     # Crear un menú de opciones para navegar entre las páginas
     with st.sidebar:
         menu_seleccionado = option_menu("Menú", ["SCYCLE-GAN", "ACPIS", "Manual de Usuario"],
-                                        icons=["cloud-upload", "edit","book"],
+                                        icons=["cloud-upload", "bi bi-clipboard-fill","book"],
                                         menu_icon="cast", default_index=0)
 
     # Crear instancia del procesador de imágenes
