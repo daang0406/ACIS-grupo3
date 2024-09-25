@@ -68,7 +68,7 @@ def main():
 
     # Crear un menú de opciones para navegar entre las páginas
     with st.sidebar:
-        menu_seleccionado = option_menu("Menú", ["CYCLE-GAN", "ACPIS"],
+        menu_seleccionado = option_menu("Menú", ["SCYCLE-GAN", "ACPIS", "Manual de Usuario"],
                                         icons=["cloud-upload", "edit"],
                                         menu_icon="cast", default_index=0)
 
@@ -135,7 +135,9 @@ def main():
                  " desafíos, como la necesidad de desarrollar métricas más adecuadas para evaluar la calidad de las\n"
                  " imágenes generadas y mejorar el proceso de entrenamiento del modelo para maximizar el uso de los\n"
                  " datos sintéticos.")
+    elif menu_seleccionado == "Manual de Usuario":
 
+        st.write("Hola")
 
 if __name__ == "__main__":
     main()
