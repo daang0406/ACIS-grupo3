@@ -99,11 +99,11 @@ def main():
             dicomProcessor.mostrarImagen()
             
             # Cargar el modelo y hacer predicción
-            modeloIA = IAModelo("modelo_entrenado.pkl")
-            imagen = dicomProcessor.obtenerImagen()
+            #modeloIA = IAModelo("modelo_entrenado.pkl")
+            #imagen = dicomProcessor.obtenerImagen()
             
             if st.button("Realizar Predicción"):
-                prediccion = modeloIA.predecir(imagen)
+                prediccion = None #modeloIA.predecir(imagen)
                 if prediccion is not None:
                     st.image(prediccion, caption="Imagen Predicha", use_column_width=True)
                     
