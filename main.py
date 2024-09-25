@@ -78,50 +78,50 @@ def main():
 
     # Página 1: Cargar y mostrar imagen DICOM o JPG
     if menuSeleccionado == "SCYCLE-GAN":
-    st.header("Datos del Paciente")
-    
-    # Apartado para ingresar los datos del paciente
-    nombrePaciente = st.text_input("Nombre del paciente")
-    dniPaciente = st.text_input("DNI del paciente")
-    fechaExamen = st.date_input("Fecha del examen", value=datetime.now())
-    
-    st.header("Transformar a ...")
-    
-    # Selección de tipo de imagen
-    tipoImagen = st.radio("Selecciona el tipo de imagen", ("Imagen de Ultrasonido", "Imagen de Tomografía Computarizada"))
-    
-    st.header("Cargar Imagen (DICOM o JPG) y Predicción")
-    
-    uploadedFile = st.file_uploader("Elige un archivo DICOM o JPG", type=["dcm", "jpg", "jpeg"])
-    if uploadedFile is not None:
-        dicomProcessor.cargarArchivo(uploadedFile)
-        dicomProcessor.mostrarImagen()
+        st.header("Datos del Paciente")
         
-        # Cargar el modelo y hacer predicción
-        modeloIA = IAModelo("modelo_entrenado.pkl")
-        imagen = dicomProcessor.obtenerImagen()
+        # Apartado para ingresar los datos del paciente
+        nombrePaciente = st.text_input("Nombre del paciente")
+        dniPaciente = st.text_input("DNI del paciente")
+        fechaExamen = st.date_input("Fecha del examen", value=datetime.now())
         
-        if st.button("Realizar Predicción"):
-            prediccion = modeloIA.predecir(imagen)
-            if prediccion is not None:
-                st.image(prediccion, caption="Imagen Predicha", use_column_width=True)
-                
-                # Guardar la imagen predicha con el nombre del paciente, DNI y fecha
-                fileName = f"{nombrePaciente}_{dniPaciente}_{fechaExamen}.jpg"
-                
-                # Convertir la imagen predicha a formato de descarga
-                img = Image.fromarray(prediccion)  # Si la predicción es un array
-                buf = io.BytesIO()
-                img.save(buf, format="JPEG")
-                byteImg = buf.getvalue()
-                
-                # Crear el botón de descarga
-                st.download_button(
-                    label="Descargar Imagen",
-                    data=byteImg,
-                    file_name=fileName,
-                    mime="image/jpeg"
-                )
+        st.header("Transformar a ...")
+        
+        # Selección de tipo de imagen
+        tipoImagen = st.radio("Selecciona el tipo de imagen", ("Imagen de Ultrasonido", "Imagen de Tomografía Computarizada"))
+        
+        st.header("Cargar Imagen (DICOM o JPG) y Predicción")
+        
+        uploadedFile = st.file_uploader("Elige un archivo DICOM o JPG", type=["dcm", "jpg", "jpeg"])
+        if uploadedFile is not None:
+            dicomProcessor.cargarArchivo(uploadedFile)
+            dicomProcessor.mostrarImagen()
+            
+            # Cargar el modelo y hacer predicción
+            modeloIA = IAModelo("modelo_entrenado.pkl")
+            imagen = dicomProcessor.obtenerImagen()
+            
+            if st.button("Realizar Predicción"):
+                prediccion = modeloIA.predecir(imagen)
+                if prediccion is not None:
+                    st.image(prediccion, caption="Imagen Predicha", use_column_width=True)
+                    
+                    # Guardar la imagen predicha con el nombre del paciente, DNI y fecha
+                    fileName = f"{nombrePaciente}_{dniPaciente}_{fechaExamen}.jpg"
+                    
+                    # Convertir la imagen predicha a formato de descarga
+                    img = Image.fromarray(prediccion)  # Si la predicción es un array
+                    buf = io.BytesIO()
+                    img.save(buf, format="JPEG")
+                    byteImg = buf.getvalue()
+                    
+                    # Crear el botón de descarga
+                    st.download_button(
+                        label="Descargar Imagen",
+                        data=byteImg,
+                        file_name=fileName,
+                        mime="image/jpeg"
+                    )
 
     # Página 2: Personalizar (vacía)
     elif menu_seleccionado == "ACPIS":
