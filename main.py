@@ -69,6 +69,7 @@ def main():
     st.title("Aplicación de Procesamiento DICOM/JPG con IA")
 
     # Crear un menú de opciones para navegar entre las páginas
+    # Link de los iconos: https://icons.getbootstrap.com/icons/clipboard-fill/ 
     with st.sidebar:
         menu_seleccionado = option_menu("Menú", ["SCYCLE-GAN", "ACPIS", "Manual de Usuario"],
                                         icons=["cloud-upload", "bi bi-clipboard-fill","book"],
