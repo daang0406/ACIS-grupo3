@@ -5,6 +5,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 from streamlit_option_menu import option_menu
 import requests
+from datetime import datetime
 
 # Clase para cargar y procesar imágenes DICOM o JPG
 class DicomProcessor:
@@ -77,17 +78,29 @@ def main():
 
     # Página 1: Cargar y mostrar imagen DICOM o JPG
     if menu_seleccionado == "SCYCLE-GAN":
+        st.header("Datos del Paciente")
+    
+        # Apartado para ingresar los datos del paciente
+        nombre_paciente = st.text_input("Nombre del paciente")
+        dni_paciente = st.text_input("DNI del paciente")
+        fecha_examen = st.date_input("Fecha del examen", value=datetime.now())
+    
+        st.header("Transformar a ...")
+        
+        # Selección de tipo de imagen
+        tipo_imagen = st.radio("Selecciona el tipo de imagen", ("Imagen de Ultrasonido", "Imagen de Tomografía Computarizada"))
+    
         st.header("Cargar Imagen (DICOM o JPG) y Predicción")
-
+        
         uploaded_file = st.file_uploader("Elige un archivo DICOM o JPG", type=["dcm", "jpg", "jpeg"])
         if uploaded_file is not None:
             dicom_processor.cargar_archivo(uploaded_file)
             dicom_processor.mostrar_imagen()
-
+    
             # Cargar el modelo y hacer predicción
             modelo_ia = IA_Modelo("modelo_entrenado.pkl")
             imagen = dicom_processor.obtener_imagen()
-
+    
             if st.button("Realizar Predicción"):
                 prediccion = modelo_ia.predecir(imagen)
                 if prediccion is not None:
