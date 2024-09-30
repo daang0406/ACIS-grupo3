@@ -1,5 +1,6 @@
 # ACIS-grupo3
- https://github.com/daang04/ACIS-grupo3/blob/main/ha.png 
+![ha](https://github.com/user-attachments/assets/966f5127-25cf-4d7d-b269-c3c968e8b590)
+
 # S-CycleGAN: Semantic Segmentation Enhanced CT-Ultrasound Image-to-Image Translation for Robotic Ultrasonography
 
 ## Introducción
