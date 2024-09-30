@@ -67,7 +67,10 @@ class IA_Modelo:
 def main():
     # Título de la aplicación
     st.title("Aplicación de Procesamiento DICOM/JPG con IA")
-
+    
+    # Agregar el disclaimer al inicio de la aplicación
+    st.info("**Disclaimer:** Este programa ha sido diseñado con fines académicos por lo que no se recomienda el uso de las imágenes generadas como guía o resultados de algún tipo para el diagnóstico.")
+    
     # Crear un menú de opciones para navegar entre las páginas
     # Link de los iconos: https://icons.getbootstrap.com/icons/clipboard-fill/ 
     with st.sidebar:
