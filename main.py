@@ -179,7 +179,8 @@ def main():
         st.write('Esta es una aplicación de la cual se encarga de transformar imágenes de CT a US y viceversa')
         
         # Cargar la imagen
-        image_path = 'https://raw.githubusercontent.com/daang04/ACIS-grupo3/main/ha.png' # Ruta de tu imagen
+        image_path = 'https://raw.githubusercontent.com/daang04/ACIS-grupo3/main/ha-removebg-preview.png' # Ruta de tu imagen
+        # ha-removebg-preview.png
         st.image(image_path, width=300)
         
         # Sección: ¿Cuáles son los parámetros empleados?
