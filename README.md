@@ -1,9 +1,10 @@
 # ACIS-grupo3
-![ha](https://github.com/user-attachments/assets/966f5127-25cf-4d7d-b269-c3c968e8b590)
+
 
 # S-CycleGAN: Semantic Segmentation Enhanced CT-Ultrasound Image-to-Image Translation for Robotic Ultrasonography
 
-## Introducción
+## Introducción![ha-removebg-preview](https://github.com/user-attachments/assets/3eb24655-aed7-4e19-a0dc-7a23ec0afa78)
+
 
 El artículo aborda los desafíos en el análisis de imágenes de ultrasonido, un método no invasivo ampliamente utilizado en diagnósticos médicos. Sin embargo, la calidad de las imágenes de ultrasonido puede verse comprometida por factores como el bajo contraste y la presencia de artefactos. Para superar estas limitaciones, los autores proponen un modelo avanzado de deep learning denominado S-CycleGAN, que genera imágenes sintéticas de ultrasonido a partir de datos de tomografía computarizada (CT). Este modelo integra discriminadores semánticos dentro del marco de CycleGAN para preservar los detalles anatómicos críticos durante la transferencia de estilo de imagen.
 
